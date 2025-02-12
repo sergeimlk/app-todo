@@ -1,7 +1,7 @@
 services:
   - type: web
     name: app-todo
-    env: docker
+    env: node
     region: frankfurt
     plan: free
     branch: main
@@ -9,5 +9,5 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
-    buildCommand: docker build -t app-todo .
-    startCommand: docker run -p 3000:3000 app-todo
+    buildCommand: npm install
+    startCommand: npm start
